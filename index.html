@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화 검색 사이트</title>
+
+    <!--파비콘-->
+    <link rel="icon" href="./images/favicon.png" />
+
+    <!--브라우저 스타일 초기화-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+
+    <!--Google Fonts - Noyo serif Korean-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Google Material Icons-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <!--GSAP & ScrollToPlugin-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"
+      integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q=="
+      crossorigin="anonymous"
+    ></script>
+    <!--ScrollMagic-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <!--Lodash-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"
+      integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww=="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/HomePage.css" />
+
+    <script defer src="./js/common.js"></script>
+    <script type="module" defer src="./js/homePage.js"></script>
+    <script type="module" defer src="./js/searching.js"></script>
+  </head>
+  <body>
+    <!--HEADER-->
+    <header>
+      <div class="inner">
+        <a href="/" class="logo">
+          <img src="./images/logo.png" alt="Jiwon's Movie Club" />
+        </a>
+
+        <div class="nav">
+          <div class="search">
+            <input type="text" id="searched-movie" />
+            <span class="material-icons search-btn">search</span>
+          </div>
+          <div class="close-btn-area" style="display: none">
+            <span class="material-icons close-btn"> close </span>
+          </div>
+
+          <!-- 나중에 메뉴 안에 다른 메뉴 li태그 안에 추가 가능 -->
+          <ul class="menu">
+            <li>
+              <a
+                href="./html/myMovieList.html"
+                class="movie-list btn btn--reverse"
+                >나의 영화 리스트</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+
+    <div class="main">
+      <div class="movie-grid"></div>
+      <div id="movie-modal" class="modal" style="display: none">
+        <div class="modal-content">
+          <div class="material-icons close">close</div>
+          <div class="modal-image">
+            <img class="modal-poster" alt="Movie Poster" />
+          </div>
+          <div class="modal-text">
+            <h3 class="modal-title"></h3>
+            <p class="modal-overview"></p>
+            <p>개봉일: <span class="modal-release-date"></span></p>
+            <p>평점: <span class="modal-vote-average"></span></p>
+            <div class="btn btn--blue bookmark-btn">
+              나의 영화 리스트에 추가하기
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--FOOTER-->
+    <footer>
+      <div class="inner">
+        <div class="info">
+          <span>제작자 : 이지원</span>
+          <span
+            >Github Link :
+            <a href="https://github.com/dongeul24/JW_Movie_Club"
+              >https://github.com/dongeul24/JW_Movie_Club</a
+            ></span
+          >
+          <span
+            >TMDB Link :
+            <a href="https://www.themoviedb.org/"
+              >https://www.themoviedb.org/</a
+            ></span
+          >
+        </div>
+
+        <p class="copyright">
+          &copy; <span class="this-year"></span> JW Movie Club. Used TMDB API.
+        </p>
+        <img
+          src="./images/logo_text_only.png"
+          alt="JW Movie Club"
+          class="logo"
+        />
+      </div>
+    </footer>
+
+    <!--TO TOP BUTTON-->
+    <div id="to-top">
+      <div class="material-icons">arrow_upward</div>
+    </div>
+  </body>
+</html>
