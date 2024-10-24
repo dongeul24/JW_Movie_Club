@@ -2,6 +2,9 @@
 
 - HTML, CSS, JS로만 만든 영화 검색 사이트.
 
+https://fascinating-pothos-e84b02.netlify.app/
+
+
 
 ## 구성
 
