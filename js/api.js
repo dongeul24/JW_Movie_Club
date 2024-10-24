@@ -1,3 +1,7 @@
+// 영화가 한페이지에 20개씩만 전달하는데
+// 시간이 남으면 사용자가 더보기를 누르거나 스크롤을 특정 위치에서 더 내릴 수록 page count 수를 늘려
+// 보여지는 영화 수를 늘릴 예정
+
 export async function fetchMovieData() {
   console.log("fetchMovieData 함수 실행됨.");
   const options = {
