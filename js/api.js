@@ -1,8 +1,4 @@
-// 영화가 한페이지에 20개씩만 전달하는데
-// 시간이 남으면 사용자가 더보기를 누르거나 스크롤을 특정 위치에서 더 내릴 수록 page count 수를 늘려
-// 보여지는 영화 수를 늘릴 예정
-
-export async function fetchMovieData() {
+export async function fetchMovieData(pageCount) {
   console.log("fetchMovieData 함수 실행됨.");
   const options = {
     method: "GET",
@@ -16,7 +12,7 @@ export async function fetchMovieData() {
   try {
     console.log("try 구문 실행됨");
     const response = await fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=ko-KR&page=1&sort_by=popularity.desc&with_watch_providers=providers%3A8",
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=ko-KR&page=${pageCount}&sort_by=popularity.desc&with_watch_providers=providers%3A8`,
       options
     );
     if (!response.ok) {

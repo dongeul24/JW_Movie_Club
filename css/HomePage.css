@@ -1,1 +1,10 @@
+.more-movies-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#load-more {
+  margin-top: 30px;
+  margin-left: 20px;
+}

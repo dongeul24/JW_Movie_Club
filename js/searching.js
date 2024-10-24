@@ -5,16 +5,19 @@
 const searchEl = document.querySelector(".search");
 const searchInputEl = searchEl.querySelector("input");
 const closeBtn = document.querySelector(".close-btn-area");
+const loadMoreButton = document.getElementById("load-more");
 
 // 검색창 요소를 클릭하면 실행.
 searchEl.addEventListener("click", function () {
   searchInputEl.focus();
   closeBtn.style.display = "block"; // close 버튼 보이게 설정
+  loadMoreButton.style.display = "none";
 });
 
 // 검색창 요소 내부 실제 input 요소에 포커스되면 실행.
 searchInputEl.addEventListener("focus", function () {
   searchEl.classList.add("focused");
+  closeBtn.style.display = "block";
   searchInputEl.setAttribute(
     "placeholder",
     "영화의 제목을 입력해주세요. (ex)독전"
@@ -27,9 +30,9 @@ closeBtn.addEventListener("click", function () {
   searchInputEl.setAttribute("placeholder", "");
   searchInputEl.value = ""; // 입력 내용 초기화
   closeBtn.style.display = "none"; // close 버튼 숨기기
+  loadMoreButton.style.display = "block";
   defaultDisplayCards();
 });
-
 
 /*
 검색 기능: API를 다시 가져와서 카드를 생설하는 방식을 이용하려고 했으나,
